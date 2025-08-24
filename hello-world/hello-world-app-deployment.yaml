@@ -4,7 +4,7 @@
       name: hello-world-deployment
       namespace: hello-world-namespace # Specify the target namespace here
     spec:
-      replicas: 2
+      replicas: 1
       selector:
         matchLabels:
           app: hello-world-app
