@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world-ingress
+  namespace: hello-world-namespace
+spec:
+  rules:
+  - host: hellow-world-service.hello-world-namespace.local # Replace with a hostname for your application
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-world-service # Replace with your ClusterIP service name
+            port:
+              number: 8080 # The port your service is listening on

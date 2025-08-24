@@ -1,0 +1,20 @@
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: hello-world-deployment
+      namespace: hello-world-namespace # Specify the target namespace here
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: hello-world-app
+      template:
+        metadata:
+          labels:
+            app: hello-world-app
+        spec:
+          containers:
+          - name: hello-world-app-container
+            image: kicbase/echo-server:1.0
+            ports:
+            - containerPort: 8080
